@@ -1,5 +1,3 @@
-'use client';
-
 import React, { FC, useState } from "react";
 
 interface ImageInputProps {
@@ -19,4 +17,4 @@ const ImageInput : FC<ImageInputProps> = ({file, onImageInput}) => {
 
 }
 
-export default ImageInput
+export default ImageInput;
