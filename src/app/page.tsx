@@ -5,10 +5,11 @@ import ImageInput from "@/app/ImageInput";
 import { useState } from "react";
 
 export default function Home() {
-  const [file, setFile] = useState("");
+  const [file, setFile] = useState(""); // State for file
 
-  function handleChange(e : React.ChangeEvent<HTMLInputElement>) {
+  const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
     console.log(e.target.files);
+    console.log("Image Inputed");
     if (e.target.files) {
       setFile(URL.createObjectURL(e.target.files[0]));
       console.log("File Changed");
@@ -21,7 +22,6 @@ export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-
         <ImageInput file={file} onImageInput={handleChange}/>
         <Image
           className="dark:invert"
